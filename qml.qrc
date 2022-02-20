@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ObjectTreePanel.qml</file>
+    </qresource>
+</RCC>
