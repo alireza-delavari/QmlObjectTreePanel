@@ -88,9 +88,15 @@ ApplicationWindow {
         onCurrentIndexChanged: {
             if (currentIndex > -1) {
                 var entity = model.get(currentIndex).entity
+
+                var topLevelWindow = targetItem.Window.window
+                var pos = topLevelWindow.contentItem.mapFromItem(entity.parent,
+                                                                 entity.x,
+                                                                 entity.y)
+
                 selectionRect.visible = true
-                selectionRect.x = entity.x
-                selectionRect.y = entity.y
+                selectionRect.x = pos.x
+                selectionRect.y = pos.y
                 selectionRect.width = entity.width
                 selectionRect.height = entity.height
             } else {
